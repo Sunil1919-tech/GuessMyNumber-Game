@@ -4,28 +4,28 @@ console.log("connected");
 const btn = document.getElementsByClassName("btn")[0];
 
 // logic to get the random num btw 1-10
-const randNum = parseInt(Math.random() * 10 + 1) ;
+const randNum = parseInt(Math.random() * 10 + 1);
+console.log(randNum);
 
-// accessing the form element 
-const form = document.getElementsByClassName('border')[0]
+// accessing the form element
+const form = document.getElementsByClassName("border")[0];
+
+// accessing h1 = notice element
+const notice = document.getElementById("notice");
 
 btn.addEventListener("click", function (event) {
   event.preventDefault();
   const num = document.getElementById("num").value;
   if (randNum > num) {
-    console.log("Try a Bigger Number ⬆️");
+    notice.innerText = "Try a Bigger Number ⬆️";
+    form.style.borderColor = "red";
   } else if (randNum == num) {
-    console.log("Congrats ㊗️");
+    notice.innerText = "Congrats㊗️㊗️";
+    form.style.borderColor = "green";
   } else {
-    console.log("Try a Smaller Number ⬇️");
+    notice.innerText = "Try a Smaller Number ⬇️";
+    form.style.borderColor = "red";
   }
 
   form.reset();
 });
-
-
-
-let myArray = ["1", "2", "3", "4"]
-let firstNum = parseInt(myArray[0]);
-let secondNum = parseInt(myArray[3]);
-console.log(firstNum + secondNum);
